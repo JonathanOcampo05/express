@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 
 // Importar las rutas
 const personasRoutes = require('./routes/personas.routes');
+const productosRoutes = require('./routes/producto.routes');
+
 
 // Crear una instancia de Express
 const app = express();
@@ -16,6 +18,8 @@ app.use(bodyParser.json());
 
 // Rutas de la aplicación
 app.use('/api/personas', personasRoutes);
+app.use('/api/productos', productosRoutes);
+
 
 // Conexión a MongoDB
 mongoose.connect(
